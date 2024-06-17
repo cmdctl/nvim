@@ -1,0 +1,12 @@
+{
+  "ai-java-improvements": {
+    "prefix": "so",
+    "body": [
+      "```java",
+      "$1",
+      "```",
+      "improve this code!"
+    ],
+    "description": "ai java improvements"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "docker-compose postgres": {
+    "prefix": "pg",
+    "body": [
+      "version: '3.8'",
+      "services:",
+      "  postgres:",
+      "    image: postgres:14.1-alpine",
+      "    restart: always",
+      "    environment:",
+      "      - POSTGRES_USER=postgres",
+      "      - POSTGRES_PASSWORD=postgres",
+      "      - POSTGRES_DB=postgres",
+      "    ports:",
+      "      - '5432:5432'",
+      "    volumes: ",
+      "      - .docker/postgres/data:/var/lib/postgresql/data",
+      "volumes:",
+      "  db:",
+      "    driver: local",
+      ""
+    ],
+    "description": "docker-compose postgres"
+  },
+  "mssql docker compose file": {
+    "prefix": "mssql",
+    "body": [
+      "version: '3.8'",
+      "services:",
+      "  mssql:",
+      "    image: mcr.microsoft.com/mssql/server:2022-latest",
+      "    container_name: mssql",
+      "    restart: always",
+      "    ports:",
+      "      - '1433:1433'",
+      "    environment:",
+      "      - ACCEPT_EULA=Y",
+      "      - MSSQL_SA_PASSWORD=yourStrong(!)Password",
+      "    volumes:",
+      "      - .docker/mssql/data:/var/opt/mssql/data",
+      "volumes:",
+      "  db:",
+      "    driver: local",
+      ""
+    ],
+    "description": "mssql docker compose file"
+  },
+  "bugticket": {
+    "prefix": "bugticket",
+    "body": [
+      "title: $1",
+      "type: Bug",
+      "area: Treadsy\\Treadsy $2",
+      "iteration: Treadsy\\Sprint $3",
+      "org: https://dev.azure.com/TireBuyer/",
+      "project: Treadsy",
+      ""
+    ],
+    "description": "create bug ticket"
+  },
+  "ticket": {
+    "prefix": "ticket",
+    "body": [
+      "title: $1",
+      "type: Product Backlog Item",
+      "area: Treadsy\\Treadsy $2",
+      "iteration: Treadsy\\Sprint $3",
+      "org: https://dev.azure.com/TireBuyer/",
+      "project: Treadsy",
+      ""
+    ],
+    "description": "create product backlog item"
+  }
+}
