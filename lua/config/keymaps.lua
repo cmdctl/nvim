@@ -11,7 +11,7 @@ end
 map("t", "<A-j>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 
 map("n", "<A-j>", lazyterm, { desc = "Terminal (Root Dir)" })
-map("n", "<C-s><C-w>", ":lua require'telescope.builtin'.grep_string()<cr>", { desc = "Search word under cursor" })
+map("n", "<C-s><C-w>", ":lua require'telescope.builtin'.grep_string({ search = vim.fn.expand('<cword>') })<cr>", { desc = "Search word under cursor" })
 map("n", "<C-e>", "<cmd>e .env<cr>", { desc = "Open .env file" })
 
 map("n", "<C-b>", "<cmd>DBUIToggle<cr>", { desc = "DBUI" })
@@ -30,3 +30,4 @@ map("n", "<leader>tjs", "<cmd>YamlToJson<cr>", { desc = "Convert yaml to json" }
 map("n", "<leader>tja", "<cmd>JsonToJava<cr>", { desc = "Convert json to java DTO" })
 map("n", "<leader>oo", "<cmd>TicketCreate<cr>", { desc = "Create devops ticket" })
 map("n", "<leader>ot", "<cmd>TicketOpen<cr>", { desc = "Open devops ticket" })
+
