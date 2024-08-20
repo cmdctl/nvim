@@ -23,7 +23,6 @@ map("n", "<leader>rg", "<cmd>GptRun<cr>", { desc = "Execute the current buffer a
 map("n", "<leader>rc", "<cmd>GptChat<cr>", { desc = "Open new chatgpt buffer" })
 
 map("n", "<leader>rh", "<cmd>Httpx<cr>", { desc = "Execute Httpx request" })
-
 map("n", "<leader>to", "<cmd>JsonScratchBuffer<cr>", { desc = "Open json buffer" })
 map("n", "<leader>tt", "<cmd>JsonToTypescript<cr>", { desc = "Convert json to typescript interface" })
 map("n", "<leader>tp", "<cmd>JsonToPython<cr>", { desc = "Convert json to python typedef" })
@@ -36,6 +35,6 @@ map("n", "<leader>tja", "<cmd>JsonToJava<cr>", { desc = "Convert json to java DT
 map("n", "<leader>oo", "<cmd>TicketCreate<cr>", { desc = "Create devops ticket" })
 map("n", "<leader>ot", "<cmd>TicketOpen<cr>", { desc = "Open devops ticket" })
 
-map("n", "<leader>Jtr", "<cmd>JavaRunSingleTest<cr>", { desc = "Run JavaRunSingleTest" })
-map("n", "<leader>Jtc", "<cmd>JavaRunClass<cr>", { desc = "Run JavaRunClass" })
-map("n", "<leader>Jte", "<cmd>JavaRerunTest<cr>", { desc = "Run JavaRerunTest" })
+map("n", "<leader>jtr", "<cmd>JavaRunSingleTest<cr>", { desc = "Run JavaRunSingleTest" })
+map("n", "<leader>jtc", "<cmd>JavaRunClass<cr>", { desc = "Run JavaRunClass" })
+map("n", "<leader>jte", "<cmd>JavaRerunTest<cr>", { desc = "Run JavaRerunTest" })
