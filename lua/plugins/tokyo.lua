@@ -1,4 +1,3 @@
-
 return {
   "tokyonight.nvim",
   opts = {
