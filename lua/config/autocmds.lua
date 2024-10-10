@@ -21,29 +21,29 @@ vim.cmd(
 )
 
 
-local gotest = require("user.go-test")
+-- local gotest = require("user.go-test")
 
-vim.api.nvim_create_user_command("GoTestsWatch", function()
-  vim.api.nvim_create_autocmd("BufWritePost", {
-    group = vim.api.nvim_create_augroup(gotest.groupname, { clear = true }),
-    pattern = "*.go",
-    callback = gotest.watch_tests(),
-  })
-end, {})
+-- vim.api.nvim_create_user_command("GoTestsWatch", function()
+--   vim.api.nvim_create_autocmd("BufWritePost", {
+--     group = vim.api.nvim_create_augroup(gotest.groupname, { clear = true }),
+--     pattern = "*.go",
+--     callback = gotest.watch_tests(),
+--   })
+-- end, {})
 
-vim.api.nvim_create_user_command("GoTestsStop", function()
-  vim.api.nvim_create_augroup(gotest.groupname, { clear = true })
-end, {})
+-- vim.api.nvim_create_user_command("GoTestsStop", function()
+--   vim.api.nvim_create_augroup(gotest.groupname, { clear = true })
+-- end, {})
 
-vim.api.nvim_create_user_command("GoTestsDiagnostics", function()
-  vim.api.nvim_create_augroup(gotest.inlinegorupname, { clear = true })
-end, {})
+-- vim.api.nvim_create_user_command("GoTestsDiagnostics", function()
+--   vim.api.nvim_create_augroup(gotest.inlinegorupname, { clear = true })
+-- end, {})
 
-vim.api.nvim_create_autocmd({"BufWritePost", "BufEnter"}, {
-  group = vim.api.nvim_create_augroup(gotest.inlinegorupname, { clear = true }),
-  pattern = "*_test.go",
-  callback = gotest.go_tests_diagnostics,
-})
+-- vim.api.nvim_create_autocmd({"BufWritePost", "BufEnter"}, {
+--   group = vim.api.nvim_create_augroup(gotest.inlinegorupname, { clear = true }),
+--   pattern = "*_test.go",
+--   callback = gotest.go_tests_diagnostics,
+-- })
 
 
 local jesttest = require("user.jest-test")
@@ -59,3 +59,5 @@ end, {})
 vim.api.nvim_create_user_command("JestTestsStop", function()
   vim.api.nvim_create_augroup(jesttest.groupname, { clear = true })
 end, {})
+
+vim.cmd(":Copilot disable")

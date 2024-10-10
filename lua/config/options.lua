@@ -5,3 +5,4 @@
 vim.g.autoformat = false
 vim.g.db_ui_execute_on_save = 0
 vim.opt.smarttab = false
+vim.opt.relativenumber = false
