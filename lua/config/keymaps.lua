@@ -4,15 +4,40 @@
 
 local map = vim.keymap.set
 
-local lazyterm = function()
-  LazyVim.terminal(nil, { cwd = LazyVim.root() })
-end
-
 map("t", "<A-j>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 vim.keymap.del("n", "S")
 
-map("n", "<A-j>", lazyterm, { desc = "Terminal (Root Dir)" })
-map("n", "<C-s><C-w>", ":lua require'telescope.builtin'.grep_string({ search = vim.fn.expand('<cword>') })<cr>", { desc = "Search word under cursor" })
+-- floating terminal
+map("n", "<leader>fT", function()
+  Snacks.terminal()
+end, { desc = "Terminal (cwd)" })
+
+map("n", "<leader>ft", function()
+  Snacks.terminal(nil, { cwd = LazyVim.root() })
+end, { desc = "Terminal (Root Dir)" })
+
+map("n", "<A-j>", function()
+  Snacks.terminal(nil, { cwd = LazyVim.root(), win = { position = "float" } })
+end, { desc = "Terminal (Root Dir)" })
+
+map("n", "<c-/>", function()
+  Snacks.terminal(nil, { cwd = LazyVim.root() })
+end, { desc = "Terminal (Root Dir)" })
+
+map("n", "<c-_>", function()
+  Snacks.terminal(nil, { cwd = LazyVim.root() })
+end, { desc = "which_key_ignore" })
+
+-- Terminal Mappings
+map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
+
+map(
+  "n",
+  "<C-s><C-w>",
+  ":lua require'telescope.builtin'.grep_string({ search = vim.fn.expand('<cword>') })<cr>",
+  { desc = "Search word under cursor" }
+)
 map("n", "<C-e>", "<cmd>e .env<cr>", { desc = "Open .env file" })
 
 map("n", "<C-b>", "<cmd>DBUIToggle<cr>", { desc = "DBUI" })
